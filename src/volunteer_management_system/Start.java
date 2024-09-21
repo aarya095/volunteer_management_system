@@ -11,7 +11,7 @@ public class Start extends JFrame implements ActionListener {
         getContentPane().setBackground(Color.WHITE);
         setLayout(null);
         
-        JLabel heading = new JLabel("VOLUNTEER MANAGEMET SYSTEM");
+        JLabel heading = new JLabel("VOLUNTEER MANAGEMENT SYSTEM");
         heading.setBounds(50, 30, 1200, 60);
         heading.setFont(new Font("serif", Font.PLAIN, 60));
         heading.setForeground(Color.BLACK);
