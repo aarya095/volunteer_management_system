@@ -121,11 +121,15 @@ public class UpdateEmployee extends JFrame implements ActionListener {
 			String query = "select * from employee where empId ='"+empId+"'";
 			ResultSet rs = c.s.executeQuery(query);
 			while(rs.next()) {
+				lblname.setText(rs.getString("name"));
 				tffname.setText(rs.getString("fname"));
+				lbldob.setText(rs.getString("dob"));
 				tfaddress.setText(rs.getString("address"));
 				tfphone.setText(rs.getString("phone"));
 				tfemail.setText(rs.getString("email"));
 				tfeducation.setText(rs.getString("education"));
+				lblaadhar.setText(rs.getString("aadhar"));
+				lblempId.setText(rs.getString("empId"));
 				tfdesignation.setText(rs.getString("designation"));
 			
 			}
@@ -162,18 +166,15 @@ public class UpdateEmployee extends JFrame implements ActionListener {
 		if(ae.getSource()==add) {
 			
 			String fname = tffname.getText();
-			String dob = tfdob.getText();
 			String phone = tfphone.getText();
 			String email = tfemail.getText();
 			String address = tfdob.getText();
 			String education = tfeducation.getText();
 			String designation = tfdesignation.getText();
-			String aadhar = tfaadhar.getText();
-			String empId = lblempId.getText();
 			
 			try {
 				conn conn = new conn();                         /*have to make a new table for this application and also mark the change where the salary part is removed*/
-				String query = "insert into employee values( '"+fname+"','"+dob+"','"+address+"','"+phone+"','"+email+"','"+education+"','"+designation+"','"+aadhar+"','"+empId+"')";
+				String query = "update employee set fname ='"+fname+"', address ='"+address+"', phone = '"+phone+"', email = '"+email+"', education = '"+education+"', designation = '"+designation+"', where empId = '"+empId+"')";
 			    conn.s.executeUpdate(query);
 			    JOptionPane.showMessageDialog(null, "Details added Successfully");
 			    setVisible(false);

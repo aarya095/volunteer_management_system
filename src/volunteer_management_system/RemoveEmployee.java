@@ -39,7 +39,7 @@ public class RemoveEmployee extends JFrame implements ActionListener {
 		add(labelname);
 		
 		JLabel lblname  = new JLabel();
-		lblname.setBounds(200, 50, 100, 30);
+		lblname.setBounds(200, 100, 100, 30);
 		add(lblname);
 		
 		JLabel labelphone = new JLabel("Phone");
