@@ -61,8 +61,9 @@ JButton add,view,update,remove;
 		}else if (ae.getSource()==update) {
 			setVisible(false);
 			new ViewEmployee();
-		}else {
-			
+		}else if (ae.getSource()== remove){
+			setVisible(false);
+			new RemoveEmployee();
 		}
 		
 	}
