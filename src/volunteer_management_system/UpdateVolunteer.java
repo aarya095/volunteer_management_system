@@ -174,7 +174,7 @@ public class UpdateVolunteer extends JFrame implements ActionListener {
 			
 			try {
 				conn conn = new conn();                         
-				String query = "update volunteer set fname ='"+fname+"', address ='"+address+"', phone = '"+phone+"', email = '"+email+"', education = '"+education+"', designation = '"+designation+"' where volunteerId = '"+volunteerId+"')";
+				String query = "update volunteer set fname ='"+fname+"', address ='"+address+"', phone = '"+phone+"', email = '"+email+"', education = '"+education+"', designation = '"+designation+"' where volunteerId = '"+volunteerId+"'";
 			    conn.s.executeUpdate(query);
 			    JOptionPane.showMessageDialog(null, "Details added Successfully");
 			    setVisible(false);
