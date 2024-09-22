@@ -75,7 +75,7 @@ public class RemoveVolunteer extends JFrame implements ActionListener {
 			public void itemStateChanged(ItemEvent ie) {
 						try {
 							conn c =new conn();
-							String query = "select * from volunteer where empId ='"+cVolunteerId.getSelectedItem()+"'";
+							String query = "select * from volunteer where volunteerId ='"+cVolunteerId.getSelectedItem()+"'";
 							ResultSet rs = c.s.executeQuery(query);
 							while(rs.next()) {
 								lblname.setText(rs.getString("name"));

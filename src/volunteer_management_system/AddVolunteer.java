@@ -42,7 +42,7 @@ public class AddVolunteer extends JFrame implements ActionListener {
 		labelfname.setFont(new Font("serif", Font.PLAIN,20));
 		add(labelfname);
 		
-		 tffname = new JTextField();
+		tffname = new JTextField();
 		tffname.setBounds(600,150,150,30);
 		add(tffname);
 		
@@ -51,7 +51,7 @@ public class AddVolunteer extends JFrame implements ActionListener {
 		labeldob.setFont(new Font("serif", Font.PLAIN,20));
 		add(labeldob);
 		
-		 tfdob = new JTextField();
+		tfdob = new JTextField();
 		tfdob.setBounds(200,200,150,30);
 		add(tfdob);
 		
@@ -122,7 +122,7 @@ public class AddVolunteer extends JFrame implements ActionListener {
 		lblvolunteerId.setFont(new Font("serif", Font.PLAIN,20));
 		add(lblvolunteerId);
 		
-		 add = new JButton("Add Details");
+		add = new JButton("Add Details");
 		add.setBounds(250,550,150,40);
 		add.addActionListener(this);
 		add.setBackground(Color.BLACK);
@@ -143,14 +143,13 @@ public class AddVolunteer extends JFrame implements ActionListener {
 }
 	
 	public void actionPerformed(ActionEvent ae) {
-		if(ae.getSource()==add) {
+		if(ae.getSource() == add) {
 			String name = tfname.getText();
 			String fname = tffname.getText();
 			String dob = tfdob.getText();
-			
+			String address = tfaddress.getText();
 			String phone = tfphone.getText();
 			String email = tfemail.getText();
-			String address = tfdob.getText();
 			String education = (String) cbeducation.getSelectedItem();
 			String designation = tfdesignation.getText();
 			String aadhar = tfaadhar.getText();
@@ -169,7 +168,7 @@ public class AddVolunteer extends JFrame implements ActionListener {
 			}
 			
 		}
-		else{
+		else if (ae.getSource() == back){
 			setVisible(false);
 			new Home();
 		}

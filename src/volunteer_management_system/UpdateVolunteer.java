@@ -19,7 +19,7 @@ public class UpdateVolunteer extends JFrame implements ActionListener {
 	JLabel lblvolunteerId;
 	String volunteerId;
 	
-	UpdateVolunteer(String empId){
+	UpdateVolunteer(String volunteerId){
 		
 		this.volunteerId = volunteerId;
 		getContentPane().setBackground(Color.WHITE);
@@ -55,7 +55,7 @@ public class UpdateVolunteer extends JFrame implements ActionListener {
 		
 		 JLabel lbldob = new JLabel();
 		 lbldob.setBounds(200,200,150,30);
-		add(lbldob);
+		 add(lbldob);
 		
 		JLabel labeladdress = new JLabel("Address: ");
 		labeladdress.setBounds(50,250,150,30);
@@ -116,6 +116,11 @@ public class UpdateVolunteer extends JFrame implements ActionListener {
 		labelvolunteerId.setFont(new Font("serif", Font.PLAIN,20));
 		add(labelvolunteerId);
 		
+		lblvolunteerId = new JLabel();
+		lblvolunteerId.setBounds(600,350,150,30);
+		lblvolunteerId.setFont(new Font("serif", Font.PLAIN,20));
+		add(lblvolunteerId);
+		
 		try {
 			conn c = new conn();
 			String query = "select * from volunteer where volunteerId ='"+volunteerId+"'";
@@ -137,12 +142,7 @@ public class UpdateVolunteer extends JFrame implements ActionListener {
 			e.printStackTrace();
 		}
 
-		lblvolunteerId = new JLabel();
-		lblvolunteerId.setBounds(600,350,150,30);
-		lblvolunteerId.setFont(new Font("serif", Font.PLAIN,20));
-		add(lblvolunteerId);
-		
-		 add = new JButton("Add Details");
+	add = new JButton("Add Details");
 		add.setBounds(250,550,150,40);
 		add.addActionListener(this);
 		add.setBackground(Color.BLACK);
@@ -163,17 +163,17 @@ public class UpdateVolunteer extends JFrame implements ActionListener {
 }
 	
 	public void actionPerformed(ActionEvent ae) {
-		if(ae.getSource()==add) {
+		if(ae.getSource() == add) {
 			
 			String fname = tffname.getText();
 			String phone = tfphone.getText();
 			String email = tfemail.getText();
-			String address = tfdob.getText();
+			String address = tfaddress.getText();
 			String education = tfeducation.getText();
 			String designation = tfdesignation.getText();
 			
 			try {
-				conn conn = new conn();                         /*have to make a new table for this application and also mark the change where the salary part is removed*/
+				conn conn = new conn();                         
 				String query = "update volunteer set fname ='"+fname+"', address ='"+address+"', phone = '"+phone+"', email = '"+email+"', education = '"+education+"', designation = '"+designation+"', where volunteerId = '"+volunteerId+"')";
 			    conn.s.executeUpdate(query);
 			    JOptionPane.showMessageDialog(null, "Details added Successfully");
