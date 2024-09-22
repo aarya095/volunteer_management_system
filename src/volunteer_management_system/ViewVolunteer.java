@@ -6,32 +6,32 @@ import java.sql.*;
 import volunteer_management_system.DbUtils;
 import java.awt.event.*;
 
-public class ViewEmployee extends JFrame implements ActionListener {
+public class ViewVolunteer extends JFrame implements ActionListener {
 	
 	JTable table;
-	Choice cemployeeId;
+	Choice cvolunteerId;
 	JButton search,print, update, back;
 	
 	
-	ViewEmployee(){
+	ViewVolunteer(){
 		
 		getContentPane().setBackground(Color.WHITE);
 		setLayout(null);
 		
-		JLabel searchlbl = new JLabel("Search by Employee ID");
+		JLabel searchlbl = new JLabel("Search by Volunteer ID");
 		searchlbl.setBounds(20, 20, 150, 20);
 		add(searchlbl);
 		
-		cemployeeId = new Choice();
-		cemployeeId.setBounds(180, 20, 150, 20);
-		add(cemployeeId);
+		cvolunteerId = new Choice();
+		cvolunteerId.setBounds(180, 20, 150, 20);
+		add(cvolunteerId);
 		
 		try {
 			conn c = new conn();
-			ResultSet rs = c.s.executeQuery("select * from employee");
+			ResultSet rs = c.s.executeQuery("select * from volunteer");
 			
 			while(rs.next()) {
-				cemployeeId.add(rs.getString("empId"));
+				cvolunteerId.add(rs.getString("volunteerId"));
 			}
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -41,7 +41,7 @@ public class ViewEmployee extends JFrame implements ActionListener {
 		
 		try {
 			conn c = new conn();
-			ResultSet rs = c.s.executeQuery("select * from employee");
+			ResultSet rs = c.s.executeQuery("select * from volunteer");
 			table.setModel(DbUtils.resultSetToTableModel(rs));
 			
 			
@@ -81,7 +81,7 @@ public class ViewEmployee extends JFrame implements ActionListener {
 
 	public void actionPerformed(ActionEvent ae) {
 		if(ae.getSource() == search) {
-			String query  = "select * from employee where empId = '"+cemployeeId.getSelectedItem()+"'";
+			String query  = "select * from volunteer where volunteerId = '"+cvolunteerId.getSelectedItem()+"'";
 			try {
 				conn c = new conn();
 				ResultSet rs = c.s.executeQuery(query);
@@ -97,7 +97,7 @@ public class ViewEmployee extends JFrame implements ActionListener {
 			}		
 		} else if (ae.getSource() == update) {
 			setVisible(false);
-			new UpdateEmployee(cemployeeId.getSelectedItem());
+			new UpdateVolunteer(cvolunteerId.getSelectedItem());
 		} else if (ae.getSource() == back){
 			setVisible(false);
 			new Home();
@@ -106,7 +106,7 @@ public class ViewEmployee extends JFrame implements ActionListener {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		new ViewEmployee();
+		new ViewVolunteer();
 	}
 
 }

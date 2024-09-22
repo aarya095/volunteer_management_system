@@ -16,7 +16,7 @@ public class AddVolunteer extends JFrame implements ActionListener {
 	JTextField tfname,tffname,tfphone,tfemail,tfaadhar,tfdob,tfaddress,tfdesignation;
 	JComboBox<String> cbeducation;
 	JButton add,back;
-	JLabel lblempId;
+	JLabel lblvolunteerId;
 	
 	AddVolunteer(){
 		
@@ -112,15 +112,15 @@ public class AddVolunteer extends JFrame implements ActionListener {
 		tfaadhar.setBounds(600,300,150,30);
 		add(tfaadhar);
 		
-		JLabel labelempId = new JLabel("Volunteer ID: ");
-		labelempId.setBounds(400,350,150,30);
-		labelempId.setFont(new Font("serif", Font.PLAIN,20));
-		add(labelempId);
+		JLabel labelvolunteerId = new JLabel("Volunteer ID: ");
+		labelvolunteerId.setBounds(400,350,150,30);
+		labelvolunteerId.setFont(new Font("serif", Font.PLAIN,20));
+		add(labelvolunteerId);
 
-		lblempId = new JLabel("" +number);
-		lblempId.setBounds(600,350,150,30);
-		lblempId.setFont(new Font("serif", Font.PLAIN,20));
-		add(lblempId);
+		lblvolunteerId = new JLabel("" +number);
+		lblvolunteerId.setBounds(600,350,150,30);
+		lblvolunteerId.setFont(new Font("serif", Font.PLAIN,20));
+		add(lblvolunteerId);
 		
 		 add = new JButton("Add Details");
 		add.setBounds(250,550,150,40);
@@ -154,11 +154,11 @@ public class AddVolunteer extends JFrame implements ActionListener {
 			String education = (String) cbeducation.getSelectedItem();
 			String designation = tfdesignation.getText();
 			String aadhar = tfaadhar.getText();
-			String empId = lblempId.getText();
+			String volunteerId = lblvolunteerId.getText();
 			
 			try {
-				conn conn = new conn();                         /*have to make a new table for this application and also mark the change where the salary part is removed*/
-				String query = "insert into employee values('"+name+"', '"+fname+"','"+dob+"','"+address+"','"+phone+"','"+email+"','"+education+"','"+designation+"','"+aadhar+"','"+empId+"')";
+				conn conn = new conn();                         
+				String query = "insert into volunteer values('"+name+"', '"+fname+"','"+dob+"','"+address+"','"+phone+"','"+email+"','"+education+"','"+designation+"','"+aadhar+"','"+volunteerId+"')";
 			    conn.s.executeUpdate(query);
 			    JOptionPane.showMessageDialog(null, "Details added Successfully");
 			    setVisible(false);

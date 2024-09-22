@@ -57,13 +57,13 @@ JButton add,view,update,remove;
 			new AddVolunteer();
 		}else if(ae.getSource()==view) {
 			setVisible(false);
-			new ViewEmployee();
+			new ViewVolunteer();
 		}else if (ae.getSource()==update) {
 			setVisible(false);
-			new ViewEmployee();
+			new ViewVolunteer();
 		}else if (ae.getSource()== remove){
 			setVisible(false);
-			new RemoveEmployee();
+			new RemoveVolunteer();
 		}
 		
 	}

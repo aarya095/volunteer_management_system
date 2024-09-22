@@ -11,17 +11,17 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import java.sql.*;
 
-public class UpdateEmployee extends JFrame implements ActionListener {
+public class UpdateVolunteer extends JFrame implements ActionListener {
 	
 	
 	JTextField tfeducation,tffname,tfphone,tfemail,tfaadhar,tfdob,tfaddress,tfdesignation;
 	JButton add,back;
-	JLabel lblempId;
-	String empId;
+	JLabel lblvolunteerId;
+	String volunteerId;
 	
-	UpdateEmployee(String empId){
+	UpdateVolunteer(String empId){
 		
-		this.empId = empId;
+		this.volunteerId = volunteerId;
 		getContentPane().setBackground(Color.WHITE);
 		setLayout(null);
 		
@@ -111,14 +111,14 @@ public class UpdateEmployee extends JFrame implements ActionListener {
 		lblaadhar.setBounds(600,300,150,30);
 		add(lblaadhar);
 		
-		JLabel labelempId = new JLabel("Volunteer ID: ");
-		labelempId.setBounds(400,350,150,30);
-		labelempId.setFont(new Font("serif", Font.PLAIN,20));
-		add(labelempId);
+		JLabel labelvolunteerId = new JLabel("Volunteer ID: ");
+		labelvolunteerId.setBounds(400,350,150,30);
+		labelvolunteerId.setFont(new Font("serif", Font.PLAIN,20));
+		add(labelvolunteerId);
 		
 		try {
 			conn c = new conn();
-			String query = "select * from employee where empId ='"+empId+"'";
+			String query = "select * from volunteer where volunteerId ='"+volunteerId+"'";
 			ResultSet rs = c.s.executeQuery(query);
 			while(rs.next()) {
 				lblname.setText(rs.getString("name"));
@@ -129,7 +129,7 @@ public class UpdateEmployee extends JFrame implements ActionListener {
 				tfemail.setText(rs.getString("email"));
 				tfeducation.setText(rs.getString("education"));
 				lblaadhar.setText(rs.getString("aadhar"));
-				lblempId.setText(rs.getString("empId"));
+				lblvolunteerId.setText(rs.getString("volunteerId"));
 				tfdesignation.setText(rs.getString("designation"));
 			
 			}
@@ -137,10 +137,10 @@ public class UpdateEmployee extends JFrame implements ActionListener {
 			e.printStackTrace();
 		}
 
-		lblempId = new JLabel();
-		lblempId.setBounds(600,350,150,30);
-		lblempId.setFont(new Font("serif", Font.PLAIN,20));
-		add(lblempId);
+		lblvolunteerId = new JLabel();
+		lblvolunteerId.setBounds(600,350,150,30);
+		lblvolunteerId.setFont(new Font("serif", Font.PLAIN,20));
+		add(lblvolunteerId);
 		
 		 add = new JButton("Add Details");
 		add.setBounds(250,550,150,40);
@@ -174,7 +174,7 @@ public class UpdateEmployee extends JFrame implements ActionListener {
 			
 			try {
 				conn conn = new conn();                         /*have to make a new table for this application and also mark the change where the salary part is removed*/
-				String query = "update employee set fname ='"+fname+"', address ='"+address+"', phone = '"+phone+"', email = '"+email+"', education = '"+education+"', designation = '"+designation+"', where empId = '"+empId+"')";
+				String query = "update volunteer set fname ='"+fname+"', address ='"+address+"', phone = '"+phone+"', email = '"+email+"', education = '"+education+"', designation = '"+designation+"', where volunteerId = '"+volunteerId+"')";
 			    conn.s.executeUpdate(query);
 			    JOptionPane.showMessageDialog(null, "Details added Successfully");
 			    setVisible(false);
@@ -193,7 +193,7 @@ public class UpdateEmployee extends JFrame implements ActionListener {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+			new UpdateVolunteer("");
 	}
 
 }

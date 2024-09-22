@@ -5,30 +5,30 @@ import javax.swing.*;
 import java.sql.*;
 import java.awt.event.*;
 
-public class RemoveEmployee extends JFrame implements ActionListener {
+public class RemoveVolunteer extends JFrame implements ActionListener {
 	
-	Choice cEmpId;
+	Choice cVolunteerId;
 	JButton delete, back;
 	
-	RemoveEmployee(){
+	RemoveVolunteer(){
 		
 		getContentPane().setBackground(Color.WHITE);
 		setLayout(null);
 		
-		JLabel labelempId = new JLabel("Employee Id");
-		labelempId.setBounds(50, 50, 100, 30);
-		add(labelempId);
+		JLabel labelvolunteerId = new JLabel("Volunteer Id");
+		labelvolunteerId.setBounds(50, 50, 100, 30);
+		add(labelvolunteerId);
 		
-		cEmpId = new Choice();
-		cEmpId.setBounds(200, 50, 150, 30);
-		add(cEmpId);
+		cVolunteerId = new Choice();
+		cVolunteerId.setBounds(200, 50, 150, 30);
+		add(cVolunteerId);
 		
 		try {
 			conn c =new conn();
-			String query = "select * from employee";
+			String query = "select * from volunteer";
 			ResultSet rs = c.s.executeQuery(query);
 			while(rs.next()) {
-				cEmpId.add(rs.getString("empId"));
+				cVolunteerId.add(rs.getString("volunteerId"));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -60,7 +60,7 @@ public class RemoveEmployee extends JFrame implements ActionListener {
 		
 		try {
 			conn c =new conn();
-			String query = "select * from employee where empId ='"+cEmpId.getSelectedItem()+"'";
+			String query = "select * from volunteer where volunteerId ='"+cVolunteerId.getSelectedItem()+"'";
 			ResultSet rs = c.s.executeQuery(query);
 			while(rs.next()) {
 				lblname.setText(rs.getString("name"));
@@ -71,11 +71,11 @@ public class RemoveEmployee extends JFrame implements ActionListener {
 			e.printStackTrace();
 		}
 		
-		cEmpId.addItemListener(new ItemListener(){
+		cVolunteerId.addItemListener(new ItemListener(){
 			public void itemStateChanged(ItemEvent ie) {
 						try {
 							conn c =new conn();
-							String query = "select * from employee where empId ='"+cEmpId.getSelectedItem()+"'";
+							String query = "select * from volunteer where empId ='"+cVolunteerId.getSelectedItem()+"'";
 							ResultSet rs = c.s.executeQuery(query);
 							while(rs.next()) {
 								lblname.setText(rs.getString("name"));
@@ -119,7 +119,7 @@ public class RemoveEmployee extends JFrame implements ActionListener {
 		if (ae.getSource() == delete) {
 			try {
 				conn c = new conn();
-				String query = "delete from employee where empId = '"+cEmpId.getSelectedItem()+"'";
+				String query = "delete from volunteer where volunteerId = '"+cVolunteerId.getSelectedItem()+"'";
 				c.s.executeUpdate(query);
 				JOptionPane.showMessageDialog(null,"Volunteer Information Deleted Successfully");
 				setVisible(false);
@@ -136,7 +136,7 @@ public class RemoveEmployee extends JFrame implements ActionListener {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-			new RemoveEmployee();
+			new RemoveVolunteer();
 	}
 
 }
