@@ -12,6 +12,7 @@ public class ViewEmployee extends JFrame implements ActionListener {
 	Choice cemployeeId;
 	JButton search,print, update, back;
 	
+	
 	ViewEmployee(){
 		
 		getContentPane().setBackground(Color.WHITE);
@@ -95,7 +96,8 @@ public class ViewEmployee extends JFrame implements ActionListener {
 				e.printStackTrace();
 			}		
 		} else if (ae.getSource() == update) {
-			
+			setVisible(false);
+			new UpdateEmployee(cemployeeId.getSelectedItem());
 		} else if (ae.getSource() == back){
 			setVisible(false);
 			new Home();

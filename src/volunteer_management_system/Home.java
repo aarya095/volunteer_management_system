@@ -59,7 +59,8 @@ JButton add,view,update,remove;
 			setVisible(false);
 			new ViewEmployee();
 		}else if (ae.getSource()==update) {
-			
+			setVisible(false);
+			new ViewEmployee();
 		}else {
 			
 		}
