@@ -14,7 +14,7 @@ import java.sql.*;
 public class UpdateVolunteer extends JFrame implements ActionListener {
 	
 	
-	JTextField tfeducation,tffname,tfphone,tfemail,tfaadhar,tfdob,tfaddress,tfdesignation;
+	JTextField tfeducation,tffname,tfphone,tfemail,tfaddress,tfdesignation;
 	JButton add,back;
 	JLabel lblvolunteerId;
 	String volunteerId;
