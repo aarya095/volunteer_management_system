@@ -17,6 +17,13 @@ public class Event extends JFrame implements ActionListener {
 		heading.setFont(new Font( "Raieway", Font.BOLD, 25));
 		add(heading);
 		
+		ImageIcon i1 = new ImageIcon(getClass().getResource("/icons/print.jpg"));
+        Image i2 = i1.getImage().getScaledInstance(1100, 700, Image.SCALE_DEFAULT);
+        ImageIcon i3 = new ImageIcon(i2);
+        JLabel image = new JLabel(i3);
+        image.setBounds(0, 00, 1050, 500);
+        add(image);
+		
 		CreateEvent = new JButton("New Event");
 		CreateEvent.setBounds(120,150,150,40);
 		CreateEvent.addActionListener(this);
