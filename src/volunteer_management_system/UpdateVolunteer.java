@@ -142,7 +142,7 @@ public class UpdateVolunteer extends JFrame implements ActionListener {
 			e.printStackTrace();
 		}
 
-	add = new JButton("Add Details");
+	add = new JButton("Update Details");
 		add.setBounds(250,550,150,40);
 		add.addActionListener(this);
 		add.setBackground(Color.BLACK);

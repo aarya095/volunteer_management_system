@@ -7,7 +7,7 @@ import java.awt.event.*;
 
 public class Home extends JFrame implements ActionListener {
 
-JButton add,view,update,remove;
+JButton add,view,update,remove,event,logout;
 	
 	Home(){
 		
@@ -45,6 +45,16 @@ JButton add,view,update,remove;
 		remove.addActionListener(this);
 		image.add(remove);
 		
+		event = new JButton("Event Management");
+		event.setBounds(740,200,150,40);
+		event.addActionListener(this);
+		image.add(event);
+		
+		logout = new JButton("Log Out");
+		logout.setBounds(940,520,150,40);
+		logout.addActionListener(this);
+		image.add(logout);
+		
 		setSize(1120,630);
 		setLocation(250,100);
 		setVisible(true);
@@ -64,6 +74,12 @@ JButton add,view,update,remove;
 		}else if (ae.getSource()== remove){
 			setVisible(false);
 			new RemoveVolunteer();
+		} else if (ae.getSource()== event){
+			setVisible(false);
+			new Event();
+		} else if (ae.getSource()== logout){
+			setVisible(false);
+			new Start();
 		}
 		
 	}
