@@ -163,7 +163,7 @@ public class AssignVolunteer extends JFrame implements ActionListener {
 	 
 	 private void dismissVolunteerFromEvent(String volunteerId, String eventId) {
 		  
-		 String deleteQuery = "DELETE FROM volunteer_event WHERE volunteerId = ? AND eventId = ?";
+		 String deleteQuery = "delete from volunteer_event where volunteerId = ? and eventId = ?";
 		    
 		    try {
 		        conn c = new conn();

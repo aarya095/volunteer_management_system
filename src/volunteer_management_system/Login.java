@@ -64,6 +64,7 @@ JTextField tfusername, tfpassword;
 				} else {
 					JOptionPane.showMessageDialog(null, "Invalid username or password!");
 					setVisible(false);
+					new Start();
 				}
 				
 			} catch (Exception e) {
