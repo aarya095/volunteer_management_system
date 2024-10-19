@@ -7,13 +7,14 @@ import EventManagement.Event;
 import VolunteerManagement.AddVolunteer;
 import VolunteerManagement.RemoveVolunteer;
 import VolunteerManagement.ViewVolunteer;
+import VolunteerManagement.volunteerManagement;
 
 import java.awt.*;
 import java.awt.event.*;
 
 public class Home extends JFrame implements ActionListener {
 
-JButton add,view,update,remove,event,logout;
+JButton VolunteerManagement,event,logout;
 	
 	public Home(){
 		
@@ -27,32 +28,17 @@ JButton add,view,update,remove,event,logout;
 		add(image);
 		
 		JLabel heading = new JLabel("Volunteer Management System");
-		heading.setBounds(620,20,400,40);
-		heading.setFont(new Font( "Raieway", Font.BOLD, 25));
+		heading.setBounds(600,20,500,40);
+		heading.setFont(new Font( "Raieway", Font.BOLD, 30));
 		image.add(heading);
 		
-		add = new JButton("Add Volunteer");
-		add.setBounds(650,80,150,40);
-		add.addActionListener(this);
-		image.add(add);
-		
-		view = new JButton("View Volunteers");
-		view.setBounds(820,80,150,40);
-		view.addActionListener(this);
-		image.add(view);
-		
-		update = new JButton("Update Volunteer");
-		update.setBounds(650,140,150,40);
-		update.addActionListener(this);
-		image.add(update);
-		
-		remove = new JButton("Remove Volunteer");
-		remove.setBounds(820,140,150,40);
-		remove.addActionListener(this);
-		image.add(remove);
+		VolunteerManagement = new JButton("Volunteer Management");
+		VolunteerManagement.setBounds(700,100,230,50);
+		VolunteerManagement.addActionListener(this);
+		image.add(VolunteerManagement);
 		
 		event = new JButton("Event Management");
-		event.setBounds(740,200,150,40);
+		event.setBounds(700,200,230,50);
 		event.addActionListener(this);
 		image.add(event);
 		
@@ -68,19 +54,11 @@ JButton add,view,update,remove,event,logout;
 	
 	public void actionPerformed(ActionEvent ae) {
 		
-		if(ae.getSource() == add) {
+		if(ae.getSource() == VolunteerManagement) {
 			setVisible(false);
-			new AddVolunteer();
-		}else if(ae.getSource()==view) {
-			setVisible(false);
-			new ViewVolunteer();
-		}else if (ae.getSource()==update) {
-			setVisible(false);
-			new ViewVolunteer();
-		}else if (ae.getSource()== remove){
-			setVisible(false);
-			new RemoveVolunteer();
-		} else if (ae.getSource()== event){
+			new volunteerManagement();
+		}
+		 else if (ae.getSource()== event){
 			setVisible(false);
 			new Event();
 		} else if (ae.getSource()== logout){

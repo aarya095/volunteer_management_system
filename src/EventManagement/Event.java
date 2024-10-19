@@ -28,32 +28,32 @@ public class Event extends JFrame implements ActionListener {
         add(image);
 		
 		CreateEvent = new JButton("New Event");
-		CreateEvent.setBounds(120,150,150,40);
+		CreateEvent.setBounds(120,130,150,40);
 		CreateEvent.addActionListener(this);
 		image.add(CreateEvent);
 		
 		AssignVolunteer = new JButton("Assign Volunteers to an Event");
-		AssignVolunteer.setBounds(370,150,300,40);
+		AssignVolunteer.setBounds(370,130,300,40);
 		AssignVolunteer.addActionListener(this);
 		image.add(AssignVolunteer);
 		
 		ViewAssignments = new JButton("View Assignments");
-		ViewAssignments.setBounds(450,250,150,40);
+		ViewAssignments.setBounds(450,230,150,40);
 		ViewAssignments.addActionListener(this);
 		image.add(ViewAssignments);
 		
 		RemoveEvent = new JButton("Remove Event");
-		RemoveEvent.setBounds(120,250,150,40);
+		RemoveEvent.setBounds(120,230,150,40);
 		RemoveEvent.addActionListener(this);
 		image.add(RemoveEvent);
 		
 		back = new JButton("Back");
-		back.setBounds(320, 340, 120, 40);
+		back.setBounds(320, 320, 120, 40);
 		back.addActionListener(this);
 		image.add(back);
 		
 		setSize(800,430);
-		setLocation(250,100);
+		setLocation(400,180);
 		setVisible(true);
 	}
 	
