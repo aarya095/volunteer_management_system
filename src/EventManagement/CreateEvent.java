@@ -93,6 +93,11 @@ public class CreateEvent extends JFrame implements ActionListener{
 			String eventDate = tfEventDate.getText();
 			String location = tflocation.getText();
 			
+			if (eventName.isEmpty() || eventDate.isEmpty() || location.isEmpty() ) {
+				
+				JOptionPane.showMessageDialog(null, "Please fill in all required fields.");
+	        
+			} else {
 			
 			try {
 				conn conn = new conn();                         
@@ -105,7 +110,7 @@ public class CreateEvent extends JFrame implements ActionListener{
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
-			
+		  }
 		}
 		else if (ae.getSource() == back){
 			setVisible(false);

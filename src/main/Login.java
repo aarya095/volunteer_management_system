@@ -15,23 +15,23 @@ JTextField tfusername, tfpassword;
 		setLayout(null);
 		
 		JLabel lblusername = new JLabel("Username");
-		lblusername.setBounds(40,20,100,30);
+		lblusername.setBounds(40,50,100,30);
 		add(lblusername);
 		
 		tfusername = new JTextField();
-		tfusername.setBounds(150,20,150,30);
+		tfusername.setBounds(150,50,150,30);
 		add(tfusername);
 		
 		JLabel lblpassword = new JLabel("Password");
-		lblpassword.setBounds(40,70,100,30);
+		lblpassword.setBounds(40,100,100,30);
 		add(lblpassword);
 		
 		tfpassword = new JTextField();
-		tfpassword.setBounds(150,70,150,30);
+		tfpassword.setBounds(150,100,150,30);
 		add(tfpassword);
 		
 		JButton login = new JButton("LOGIN");
-		login.setBounds(150,140,150,30);
+		login.setBounds(150,170,150,30);
 		login.setBackground(Color.BLACK);
 		login.setForeground(Color.white);
 		login.addActionListener(this);
@@ -41,7 +41,7 @@ JTextField tfusername, tfpassword;
 		Image i2 = i1.getImage().getScaledInstance(200,200, Image.SCALE_DEFAULT);
 		ImageIcon i3 = new ImageIcon(i2);
 		JLabel image = new JLabel(i3);
-		image.setBounds(350,0,200,200);
+		image.setBounds(350,20,200,200);
 		add(image);
 		
 		setSize(600,300);

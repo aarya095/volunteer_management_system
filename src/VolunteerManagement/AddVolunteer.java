@@ -41,7 +41,7 @@ public class AddVolunteer extends JFrame implements ActionListener {
 		tfname.setBounds(200,150,150,30);
 		add(tfname);
 		
-		JLabel labelfname = new JLabel("Father's Name: ");
+		JLabel labelfname = new JLabel("Surname: ");
 		labelfname.setBounds(400,150,150,30);
 		labelfname.setFont(new Font("serif", Font.PLAIN,20));
 		add(labelfname);
@@ -159,6 +159,13 @@ public class AddVolunteer extends JFrame implements ActionListener {
 			String aadhar = tfaadhar.getText();
 			String volunteerId = lblvolunteerId.getText();
 			
+			if (name.isEmpty() || fname.isEmpty() || dob.isEmpty() || address.isEmpty() || phone.isEmpty() || 
+		            email.isEmpty() || designation.isEmpty() || aadhar.isEmpty()) {
+				
+				JOptionPane.showMessageDialog(null, "Please fill in all required fields.");
+	        
+			} else {
+			
 			try {
 				conn conn = new conn();                         
 				String query = "insert into volunteer values('"+name+"', '"+fname+"','"+dob+"','"+address+"','"+phone+"','"+email+"','"+education+"','"+designation+"','"+aadhar+"','"+volunteerId+"')";
@@ -170,7 +177,7 @@ public class AddVolunteer extends JFrame implements ActionListener {
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
-			
+	       }
 		}
 		else if (ae.getSource() == back){
 			setVisible(false);
