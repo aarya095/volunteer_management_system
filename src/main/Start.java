@@ -1,4 +1,4 @@
-package volunteer_management_system;
+package main;
 
 import javax.swing.*;
 import java.awt.*;

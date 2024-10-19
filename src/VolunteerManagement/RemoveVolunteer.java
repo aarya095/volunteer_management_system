@@ -3,8 +3,8 @@ package VolunteerManagement;
 import java.awt.*;
 import javax.swing.*;
 
-import volunteer_management_system.Home;
-import volunteer_management_system.conn;
+import main.Home;
+import main.conn;
 
 import java.sql.*;
 import java.awt.event.*;
@@ -14,7 +14,7 @@ public class RemoveVolunteer extends JFrame implements ActionListener {
 	Choice cVolunteerId;
 	JButton delete, back;
 	
-	RemoveVolunteer(){
+	public RemoveVolunteer(){
 		
 		getContentPane().setBackground(Color.WHITE);
 		setLayout(null);

@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-import volunteer_management_system.conn;
+import main.conn;
 
 import java.sql.*;
 import java.util.*;

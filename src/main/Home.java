@@ -1,4 +1,4 @@
-package volunteer_management_system;
+package main;
 
 import java.awt.Image;
 import javax.swing.*;
@@ -15,7 +15,7 @@ public class Home extends JFrame implements ActionListener {
 
 JButton add,view,update,remove,event,logout;
 	
-	Home(){
+	public Home(){
 		
 		setLayout(null);
 		

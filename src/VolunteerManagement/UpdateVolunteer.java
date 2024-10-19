@@ -10,8 +10,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import volunteer_management_system.Home;
-import volunteer_management_system.conn;
+import main.Home;
+import main.conn;
 
 import java.sql.*;
 

@@ -1,4 +1,4 @@
-package volunteer_management_system;
+package main;
 
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;

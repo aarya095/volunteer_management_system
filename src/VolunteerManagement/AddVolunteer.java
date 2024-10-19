@@ -6,8 +6,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-import volunteer_management_system.Home;
-import volunteer_management_system.conn;
+import main.Home;
+import main.conn;
 
 import java.sql.*;
 import java.util.*;
@@ -22,7 +22,7 @@ public class AddVolunteer extends JFrame implements ActionListener {
 	JButton add,back;
 	JLabel lblvolunteerId;
 	
-	AddVolunteer(){
+	public AddVolunteer(){
 		
 		getContentPane().setBackground(Color.WHITE);
 		setLayout(null);

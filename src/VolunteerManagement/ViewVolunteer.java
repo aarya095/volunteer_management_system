@@ -2,12 +2,12 @@ package VolunteerManagement;
 
 import javax.swing.*;
 
+import main.DbUtils;
+import main.Home;
+import main.conn;
+
 import java.awt.*;
 import java.sql.*;
-import volunteer_management_system.DbUtils;
-import volunteer_management_system.Home;
-import volunteer_management_system.conn;
-
 import java.awt.event.*;
 
 public class ViewVolunteer extends JFrame implements ActionListener {
@@ -17,7 +17,7 @@ public class ViewVolunteer extends JFrame implements ActionListener {
 	JButton search,print, update, back;
 	
 	
-	ViewVolunteer(){
+	public ViewVolunteer(){
 		
 		getContentPane().setBackground(Color.WHITE);
 		setLayout(null);

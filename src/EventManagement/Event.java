@@ -2,7 +2,7 @@ package EventManagement;
 
 import javax.swing.*;
 
-import volunteer_management_system.Home;
+import main.Home;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -11,7 +11,7 @@ public class Event extends JFrame implements ActionListener {
 
 	JButton CreateEvent, AssignVolunteer, ViewAssignments, RemoveEvent, back ;
 
-	Event() {
+	public Event() {
 		
 		setLayout(null);
 		

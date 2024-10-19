@@ -2,11 +2,11 @@ package EventManagement;
 
 import javax.swing.*;
 
+import main.DbUtils;
+import main.conn;
+
 import java.awt.*;
 import java.sql.*;
-import volunteer_management_system.DbUtils;
-import volunteer_management_system.conn;
-
 import java.awt.event.*;
 
 public class ViewAssignments extends JFrame implements ActionListener {

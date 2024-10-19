@@ -1,11 +1,11 @@
-package volunteer_management_system;
+package main;
 
 import java.sql.*;
 
 public class conn {
 
-	Connection c;
-	Statement s;
+	public Connection c;
+	public Statement s;
 	
 	public conn () {
 		
