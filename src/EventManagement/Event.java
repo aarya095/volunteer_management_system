@@ -1,6 +1,9 @@
-package volunteer_management_system;
+package EventManagement;
 
 import javax.swing.*;
+
+import volunteer_management_system.Home;
+
 import java.awt.*;
 import java.awt.event.*;
 

@@ -2,6 +2,12 @@ package volunteer_management_system;
 
 import java.awt.Image;
 import javax.swing.*;
+
+import EventManagement.Event;
+import VolunteerManagement.AddVolunteer;
+import VolunteerManagement.RemoveVolunteer;
+import VolunteerManagement.ViewVolunteer;
+
 import java.awt.*;
 import java.awt.event.*;
 

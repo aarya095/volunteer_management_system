@@ -1,9 +1,13 @@
-package volunteer_management_system;
+package VolunteerManagement;
 
 import javax.swing.*;
+
 import java.awt.*;
 import java.sql.*;
 import volunteer_management_system.DbUtils;
+import volunteer_management_system.Home;
+import volunteer_management_system.conn;
+
 import java.awt.event.*;
 
 public class ViewVolunteer extends JFrame implements ActionListener {

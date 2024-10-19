@@ -1,4 +1,4 @@
-package volunteer_management_system;
+package VolunteerManagement;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -9,6 +9,10 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+
+import volunteer_management_system.Home;
+import volunteer_management_system.conn;
+
 import java.sql.*;
 
 public class UpdateVolunteer extends JFrame implements ActionListener {

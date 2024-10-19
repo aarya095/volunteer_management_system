@@ -1,10 +1,13 @@
-package volunteer_management_system;
+package EventManagement;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
+
+import volunteer_management_system.conn;
+
 import java.sql.*;
 import java.util.*;
 
