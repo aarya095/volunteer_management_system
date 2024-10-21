@@ -182,7 +182,7 @@ public class UpdateVolunteer extends JFrame implements ActionListener {
 			    conn.s.executeUpdate(query);
 			    JOptionPane.showMessageDialog(null, "Details added Successfully");
 			    setVisible(false);
-			    new Home();
+			    new volunteerManagement();
 			    
 			}catch(Exception e) {
 				e.printStackTrace();
@@ -191,7 +191,7 @@ public class UpdateVolunteer extends JFrame implements ActionListener {
 		}
 		else{
 			setVisible(false);
-			new Home();
+			new volunteerManagement();
 		}
 	}
 

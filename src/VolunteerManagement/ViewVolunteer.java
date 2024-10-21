@@ -104,7 +104,7 @@ public class ViewVolunteer extends JFrame implements ActionListener {
 			new UpdateVolunteer(cvolunteerId.getSelectedItem());
 		} else if (ae.getSource() == back){
 			setVisible(false);
-			new Home();
+			new volunteerManagement();
 		}
 	}
 	

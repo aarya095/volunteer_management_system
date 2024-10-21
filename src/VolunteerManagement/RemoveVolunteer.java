@@ -127,13 +127,13 @@ public class RemoveVolunteer extends JFrame implements ActionListener {
 				c.s.executeUpdate(query);
 				JOptionPane.showMessageDialog(null,"Volunteer Information Deleted Successfully");
 				setVisible(false);
-				new Home();
+				new volunteerManagement();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		} else if  (ae.getSource() == back) {
 			setVisible(false);
-			new Home();
+			new volunteerManagement();
 		}
 		
 	}
