@@ -10,8 +10,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+import database.conn;
 import main.Home;
-import main.conn;
 
 import java.sql.*;
 

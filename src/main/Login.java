@@ -2,6 +2,9 @@ package main;
 
 import java.awt.*;
 import javax.swing.*;
+
+import database.conn;
+
 import java.awt.event.*;
 import java.sql.*;
 

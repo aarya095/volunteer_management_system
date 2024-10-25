@@ -2,8 +2,8 @@ package EventManagement;
 
 import javax.swing.*;
 
-import main.DbUtils;
-import main.conn;
+import database.DbUtils;
+import database.conn;
 
 import java.awt.*;
 import java.sql.*;

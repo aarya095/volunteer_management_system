@@ -3,7 +3,7 @@ package EventManagement;
 import java.awt.*;
 import javax.swing.*;
 
-import main.conn;
+import database.conn;
 
 import java.sql.*;
 import java.awt.event.*;

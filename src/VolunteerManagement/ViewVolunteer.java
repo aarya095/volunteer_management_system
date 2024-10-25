@@ -2,9 +2,9 @@ package VolunteerManagement;
 
 import javax.swing.*;
 
-import main.DbUtils;
+import database.DbUtils;
+import database.conn;
 import main.Home;
-import main.conn;
 
 import java.awt.*;
 import java.sql.*;

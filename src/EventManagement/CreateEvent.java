@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-import main.conn;
+import database.conn;
 
 import java.sql.*;
 import java.util.*;
