@@ -2,7 +2,7 @@ package EventManagement;
 
 import javax.swing.*;
 
-import database.DbUtils;
+import net.proteanit.sql.DbUtils;
 import database.conn;
 
 import java.awt.*;
