@@ -56,7 +56,7 @@ public class ResetPassword extends JFrame implements ActionListener {
 
         // Frame settings
         setSize(400, 300);
-        setLocation(500, 200);
+        setLocation(550, 260);
         setVisible(true);
     }
 

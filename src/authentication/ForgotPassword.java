@@ -22,21 +22,21 @@ public class ForgotPassword extends JFrame implements ActionListener {
         setLayout(null);
 
         JLabel enteremail = new JLabel("Enter Your Registered Email: ");
-        enteremail.setBounds(30, 50, 220, 30);
+        enteremail.setBounds(40, 50, 220, 30);
         enteremail.setFont(new Font("Raieway", Font.BOLD, 15));
         add(enteremail);
 
         tfemail = new JTextField();
-        tfemail.setBounds(260, 50, 300, 30);
+        tfemail.setBounds(15, 100, 280, 30);
         add(tfemail);
 
         sendOtp = new JButton("Send OTP");
-        sendOtp.setBounds(200, 170, 150, 30);
+        sendOtp.setBounds(70, 170, 150, 30);
         sendOtp.addActionListener(this);
         add(sendOtp);
 
-        setSize(600, 300);
-        setLocation(450, 200);
+        setSize(320, 300);
+        setLocation(600, 270);
         setVisible(true);
     }
 
