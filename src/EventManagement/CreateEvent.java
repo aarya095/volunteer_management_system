@@ -8,6 +8,8 @@ import javax.swing.*;
 
 import database.conn;
 
+import com.toedter.calendar.JDateChooser;
+
 import java.sql.*;
 import java.util.*;
 
@@ -16,9 +18,10 @@ public class CreateEvent extends JFrame implements ActionListener{
 	Random ran = new Random();
 	int number = ran.nextInt(999999);
 	
-	JTextField tfEventName, tfEventDate, tflocation;
+	JTextField tfEventName, tflocation;
 	JButton add,back;
 	JLabel lblEventId;
+	JDateChooser EventDate;
 	
 	CreateEvent(){
 		
@@ -44,9 +47,9 @@ public class CreateEvent extends JFrame implements ActionListener{
 		labelEventDate.setFont(new Font("serif", Font.PLAIN,20));
 		add(labelEventDate);
 		
-		tfEventDate = new JTextField();
-		tfEventDate.setBounds(600,150,150,30);
-		add(tfEventDate);
+		EventDate = new JDateChooser();
+		EventDate.setBounds(600,150,150,30);
+        add(EventDate);
 		
 		JLabel labellocation = new JLabel("Location: ");
 		labellocation.setBounds(50,200,150,30);
@@ -68,21 +71,21 @@ public class CreateEvent extends JFrame implements ActionListener{
 		add(lblEventId);
 		
 		add = new JButton("Add Details");
-		add.setBounds(250,400,150,40);
+		add.setBounds(250,390,150,40);
 		add.addActionListener(this);
 		add.setBackground(Color.BLACK);
 		add.setForeground(Color.WHITE);
 		add(add);
 	
 		back = new JButton("Back");
-		back.setBounds(450,400,150,40);
+		back.setBounds(450,390,150,40);
 		back.addActionListener(this);
 		back.setBackground(Color.BLACK);
 		back.setForeground(Color.WHITE);
 		add(back);
 
-		setSize(900,500);
-		setLocation(300,50);
+		setSize(900,490);
+		setLocation(330,140);
 		setVisible(true);
 	}
 
@@ -90,7 +93,7 @@ public class CreateEvent extends JFrame implements ActionListener{
 		if(ae.getSource() == add) {
 			String eventId = lblEventId.getText();
 			String eventName = tfEventName.getText();
-			String eventDate = tfEventDate.getText();
+			String eventDate = ((JTextField) EventDate.getDateEditor().getUiComponent()).getText();
 			String location = tflocation.getText();
 			
 			if (eventName.isEmpty() || eventDate.isEmpty() || location.isEmpty() ) {

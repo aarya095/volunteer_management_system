@@ -118,7 +118,7 @@ public class AssignVolunteer extends JFrame implements ActionListener {
 	add(dismissVolunteer);
 	
 	setSize(1530,700);
-	setLocation(0,100);
+	setLocation(0,80);
 	setVisible(true);
 	
 	}

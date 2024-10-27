@@ -59,7 +59,7 @@ JButton login, forgotPassword;
 		add(image);
 		
 		setSize(600,300);
-		setLocation(450,200);
+		setLocation(480,220);
 		setVisible(true);
 }
 

@@ -147,23 +147,22 @@ public class UpdateVolunteer extends JFrame implements ActionListener {
 		}
 
 	add = new JButton("Update Details");
-		add.setBounds(250,550,150,40);
+		add.setBounds(250,480,150,40);
 		add.addActionListener(this);
 		add.setBackground(Color.BLACK);
 		add.setForeground(Color.WHITE);
 		add(add);
 	
 		back = new JButton("Back");
-		back.setBounds(450,550,150,40);
+		back.setBounds(450,480,150,40);
 		back.addActionListener(this);
 		back.setBackground(Color.BLACK);
 		back.setForeground(Color.WHITE);
 		add(back);
 
-		setSize(900,700);
-		setLocation(300,50);
+		setSize(900,600);
+		setLocation(330,110);
 		setVisible(true);
-	
 }
 	
 	public void actionPerformed(ActionEvent ae) {

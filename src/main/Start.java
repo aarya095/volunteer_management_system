@@ -33,7 +33,7 @@ public class Start extends JFrame implements ActionListener {
         
         
         setSize(1170, 650);
-        setLocation(200, 50);
+        setLocation(200, 80);
         setVisible(true);
         
        

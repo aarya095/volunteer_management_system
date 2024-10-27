@@ -8,7 +8,7 @@ import javax.swing.*;
 
 import database.conn;
 import main.Home;
-
+import com.toedter.calendar.JDateChooser;
 import java.sql.*;
 import java.util.*;
 
@@ -17,10 +17,11 @@ public class AddVolunteer extends JFrame implements ActionListener {
 	Random ran = new Random();
 	int number = ran.nextInt(999999);
 	
-	JTextField tfname,tffname,tfphone,tfemail,tfaadhar,tfdob,tfaddress,tfdesignation;
+	JTextField tfname,tffname,tfphone,tfemail,tfaadhar,tfaddress,tfdesignation;
 	JComboBox<String> cbeducation;
 	JButton add,back;
 	JLabel lblvolunteerId;
+	JDateChooser dcdob;
 	
 	public AddVolunteer(){
 		
@@ -55,9 +56,9 @@ public class AddVolunteer extends JFrame implements ActionListener {
 		labeldob.setFont(new Font("serif", Font.PLAIN,20));
 		add(labeldob);
 		
-		tfdob = new JTextField();
-		tfdob.setBounds(200,200,150,30);
-		add(tfdob);
+		dcdob = new JDateChooser();
+        dcdob.setBounds(200, 200, 150, 30);
+        add(dcdob);
 		
 		JLabel labeladdress = new JLabel("Address: ");
 		labeladdress.setBounds(50,250,150,30);
@@ -91,7 +92,7 @@ public class AddVolunteer extends JFrame implements ActionListener {
 		labeleducation.setFont(new Font("serif", Font.PLAIN,20));
 		add(labeleducation);
 		
-		String courses[]= {"BBA","BCA","BA","BSc","B.Com","B.Tech","MBA","M.A","M.Tech","Phd"};
+		String courses[]= {"BBA","BCA","BA","MA","BSc","MSc","B.Com","BMS","B.Tech","M.Tech","MBA","Phd"};
 		cbeducation = new JComboBox<>(courses);
 		cbeducation.setBackground(Color.WHITE);
 		cbeducation.setForeground(Color.BLACK);
@@ -127,21 +128,21 @@ public class AddVolunteer extends JFrame implements ActionListener {
 		add(lblvolunteerId);
 		
 		add = new JButton("Add Details");
-		add.setBounds(250,550,150,40);
+		add.setBounds(250,480,150,40);
 		add.addActionListener(this);
 		add.setBackground(Color.BLACK);
 		add.setForeground(Color.WHITE);
 		add(add);
 	
 		back = new JButton("Back");
-		back.setBounds(450,550,150,40);
+		back.setBounds(450,480,150,40);
 		back.addActionListener(this);
 		back.setBackground(Color.BLACK);
 		back.setForeground(Color.WHITE);
 		add(back);
 
-		setSize(900,700);
-		setLocation(300,50);
+		setSize(900,600);
+		setLocation(330,110);
 		setVisible(true);
 	
 }
@@ -150,7 +151,7 @@ public class AddVolunteer extends JFrame implements ActionListener {
 		if(ae.getSource() == add) {
 			String name = tfname.getText();
 			String fname = tffname.getText();
-			String dob = tfdob.getText();
+			String dob = ((JTextField) dcdob.getDateEditor().getUiComponent()).getText();
 			String address = tfaddress.getText();
 			String phone = tfphone.getText();
 			String email = tfemail.getText();
