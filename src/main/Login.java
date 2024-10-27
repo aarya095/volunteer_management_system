@@ -70,7 +70,8 @@ JPasswordField pfpassword;
 				if (ae.getSource() == login) {
 				
 				String username = tfusername.getText();
-				String password = pfpassword.getText();
+				char[] passwordArray = pfpassword.getPassword(); 
+	            String password = new String(passwordArray);
 				
 				conn c = new conn();
 				String query = "select * from login where username = '"+username+"' and password ='"+password+"' ";
