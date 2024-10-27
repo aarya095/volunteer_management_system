@@ -14,15 +14,15 @@ import java.awt.event.*;
 
 public class Home extends JFrame implements ActionListener {
 
-JButton VolunteerManagement,event,logout;
+JButton VolunteerManagement,event,logout;  
 	
 	public Home(){
 		
-		setLayout(null);
+		setLayout(null); //setting setLayout null allows the user to manually set the location of components 
 		
-		ImageIcon i1 = new ImageIcon(getClass().getResource("/icons/home.jpg"));
-		Image i2 = i1.getImage().getScaledInstance(1120,630, Image.SCALE_DEFAULT);
-		ImageIcon i3 = new ImageIcon(i2);
+		ImageIcon i1 = new ImageIcon(getClass().getResource("/icons/home.jpg")); // This instance is created to load the image from the resources using the ImageIcon class
+		Image i2 = i1.getImage().getScaledInstance(1120,630, Image.SCALE_DEFAULT); // This instance is created to hold the scaled version of the image
+		ImageIcon i3 = new ImageIcon(i2); // This instance is created to wrap the scaled image (i2) back into an ImageIcon
 		JLabel image = new JLabel(i3);
 		image.setBounds(0,0,1120,630);
 		add(image);
@@ -58,10 +58,10 @@ JButton VolunteerManagement,event,logout;
 			setVisible(false);
 			new volunteerManagement();
 		}
-		 else if (ae.getSource()== event){
+		 else if (ae.getSource() == event){
 			setVisible(false);
 			new Event();
-		} else if (ae.getSource()== logout){
+		} else if (ae.getSource() == logout){
 			setVisible(false);
 			new Start();
 		}

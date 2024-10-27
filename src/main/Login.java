@@ -11,7 +11,7 @@ import database.conn;
 import java.awt.event.*;
 import java.sql.*;
 
-public class Login extends JFrame implements ActionListener {
+public class Login extends JFrame implements ActionListener { // Login inherits JFrame and implements ActionListner interface
 
 JTextField tfusername;
 JButton login, forgotPassword;
@@ -42,14 +42,14 @@ JPasswordField pfpassword;
 		login.setBounds(150,170,150,30);
 		login.setBackground(Color.BLACK);
 		login.setForeground(Color.white);
-		login.addActionListener(this);
+		login.addActionListener(this); //registers login button as a event source for actionListenser
 		add(login);
 		
 		forgotPassword = new JButton("Forgot Password/Username");
 		forgotPassword.setBounds(125,210,200,32);
 		forgotPassword.setBackground(Color.BLACK);
 		forgotPassword.setForeground(Color.white);
-		forgotPassword.addActionListener(this);
+		forgotPassword.addActionListener(this); //registers forgotPassword button as a event source for actionListenser
 		add(forgotPassword);
 		
 		ImageIcon i1 = new ImageIcon(getClass().getResource("/icons/second.jpg"));
@@ -64,19 +64,19 @@ JPasswordField pfpassword;
 		setVisible(true);
 }
 
-		public void actionPerformed(ActionEvent ae) {
+		public void actionPerformed(ActionEvent ae) { //ActionListener interface is overriden here
 			try {
 				
 				if (ae.getSource() == login) {
 				
 				String username = tfusername.getText();
-				char[] passwordArray = pfpassword.getPassword(); 
-	            String password = new String(passwordArray);
+				char[] passwordArray = pfpassword.getPassword(); //can't use getText since pfpassword is declared as JPasswordField
+	            String password = new String(passwordArray); //converts char into string
 				
 				conn c = new conn();
-				String query = "select * from login where username = '"+username+"' and password ='"+password+"' ";
+				String query = "select * from login where username = '"+username+"' and password ='"+password+"' "; //SQL injection can occur not safe
 				
-				ResultSet rs = c.s.executeQuery(query);
+				ResultSet rs = c.s.executeQuery(query); //must use prepared statement
 				
 				
 				if(rs.next()) {
@@ -100,9 +100,9 @@ JPasswordField pfpassword;
 			}
 		}
 		
-	public static void main(String[] args) {
+	public static void main(String[] args) { //start point
 		// TODO Auto-generated method stub
-		new Login();
+		new Login(); //object creation
 	}
 
 }
