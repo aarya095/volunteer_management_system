@@ -15,6 +15,7 @@ public class ResetPassword extends JFrame implements ActionListener {
     JButton resetButton;
     int validOtp;
     String userEmail;
+    OTPService otpService = OTPService.getInstance(); // Use singleton instance of OTPService
 
     public ResetPassword(int otp, String email) {
         this.validOtp = otp;
@@ -57,6 +58,7 @@ public class ResetPassword extends JFrame implements ActionListener {
         // Frame settings
         setSize(400, 300);
         setLocation(550, 260);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Ensure the application exits when the window is closed
         setVisible(true);
     }
 
@@ -65,6 +67,7 @@ public class ResetPassword extends JFrame implements ActionListener {
         try {
             int enteredOtp = Integer.parseInt(otpField.getText());
 
+            // Check if entered OTP matches the valid OTP
             if (enteredOtp == validOtp) {
                 String newPassword = newPasswordField.getText();
                 String newUsername = newUsernameField.getText();
@@ -87,9 +90,10 @@ public class ResetPassword extends JFrame implements ActionListener {
 
                 int rowsAffected = pstmt.executeUpdate();
 
+                // Check if the update was successful
                 if (rowsAffected > 0) {
                     JOptionPane.showMessageDialog(null, "Username and password reset successfully!");
-                    setVisible(false);
+                    setVisible(false); // Close the current window
                     new Login();  // Redirect to login screen
                 } else {
                     JOptionPane.showMessageDialog(null, "Error updating username or password. Try again.");
@@ -105,6 +109,6 @@ public class ResetPassword extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        new ResetPassword(123456, "test@example.com");
+        new ResetPassword(123456, "test@example.com"); // For testing, change as necessary
     }
 }

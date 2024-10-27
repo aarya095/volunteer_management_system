@@ -3,19 +3,18 @@ package authentication;
 import javax.swing.*;
 import database.conn;
 import main.Login;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Connection;
 
 public class ForgotPassword extends JFrame implements ActionListener {
 
     JTextField tfemail;
     JButton sendOtp;
-    OTPService otpService = new OTPService(); // Create OTPService instance
+    OTPService otpService = OTPService.getInstance(); // Use singleton instance of OTPService
 
     public ForgotPassword() {
         getContentPane().setBackground(Color.WHITE);
@@ -49,7 +48,7 @@ public class ForgotPassword extends JFrame implements ActionListener {
                 conn c = new conn();  // Get the connection object
                 Connection connection = c.c;  // Use the connection directly
 
-                String query = "select * from login where email = ?";
+                String query = "SELECT * FROM login WHERE email = ?";
                 PreparedStatement pstmt = connection.prepareStatement(query);
                 pstmt.setString(1, email);
 
