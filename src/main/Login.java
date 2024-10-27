@@ -13,8 +13,9 @@ import java.sql.*;
 
 public class Login extends JFrame implements ActionListener {
 
-JTextField tfusername, tfpassword;
+JTextField tfusername;
 JButton login, forgotPassword;
+JPasswordField pfpassword; 
 	
 	 public Login(){
 		
@@ -33,9 +34,9 @@ JButton login, forgotPassword;
 		lblpassword.setBounds(40,100,100,30);
 		add(lblpassword);
 		
-		tfpassword = new JTextField();
-		tfpassword.setBounds(150,100,150,30);
-		add(tfpassword);
+		pfpassword = new JPasswordField();
+		pfpassword.setBounds(150,100,150,30);
+		add(pfpassword);
 		
 		login = new JButton("LOGIN");
 		login.setBounds(150,170,150,30);
@@ -69,7 +70,7 @@ JButton login, forgotPassword;
 				if (ae.getSource() == login) {
 				
 				String username = tfusername.getText();
-				String password = tfpassword.getText();
+				String password = pfpassword.getText();
 				
 				conn c = new conn();
 				String query = "select * from login where username = '"+username+"' and password ='"+password+"' ";
