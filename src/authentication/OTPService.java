@@ -103,6 +103,6 @@ public class OTPService {
         // You can test the OTP service here
         OTPService otpService = new OTPService();
         otpService.generateOTP();
-        otpService.sendOTP("recipient@example.com"); // Change to a valid recipient
+        otpService.sendOTP("aaryasarfare-inft@atharvacoe.ac.in"); // Change to a valid recipient
     }
 }
