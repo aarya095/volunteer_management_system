@@ -24,7 +24,6 @@ public class ResetPassword extends JFrame implements ActionListener {
         getContentPane().setBackground(Color.WHITE);
         setLayout(null);
 
-        // OTP Label and Field
         JLabel otpLabel = new JLabel("Enter OTP:");
         otpLabel.setBounds(50, 30, 120, 30);
         add(otpLabel);
@@ -49,13 +48,11 @@ public class ResetPassword extends JFrame implements ActionListener {
         newUsernameField.setBounds(180, 130, 150, 30);
         add(newUsernameField);
 
-        // Reset Button
         resetButton = new JButton("Reset Password and Username");
         resetButton.setBounds(60, 200, 250, 30);
         resetButton.addActionListener(this);
         add(resetButton);
 
-        // Frame settings
         setSize(400, 300);
         setLocation(550, 260);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Ensure the application exits when the window is closed
@@ -79,16 +76,18 @@ public class ResetPassword extends JFrame implements ActionListener {
                 }
 
                 // Update the database
-                conn dbConnection = new conn();
-                Connection connection = dbConnection.c;
+                conn dbConnection = new conn(); // Create a new connection
+                Connection connection = dbConnection.c; // Get the connection object
 
                 String query = "UPDATE login SET password = ?, username = ? WHERE email = ?";
                 PreparedStatement pstmt = connection.prepareStatement(query);
-                pstmt.setString(1, newPassword);  // Set new password
-                pstmt.setString(2, newUsername);  // Set new username
+                pstmt.setString(1, newPassword);  // // Replace first "?" with "newPassword"
+                pstmt.setString(2, newUsername);  // Replace second "?" with "newUsername"
                 pstmt.setString(3, userEmail);    // Set email condition
 
-                int rowsAffected = pstmt.executeUpdate();
+                //have not yet applied condition for not entering the same old password again
+                
+                int rowsAffected = pstmt.executeUpdate(); //executeUpdate by default returns the number of rows it has modified
 
                 // Check if the update was successful
                 if (rowsAffected > 0) {
@@ -101,7 +100,7 @@ public class ResetPassword extends JFrame implements ActionListener {
             } else {
                 JOptionPane.showMessageDialog(null, "Invalid OTP! Please try again.");
             }
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException e) { /*Thrown to indicate that the application has attempted to convert a string to one of the numeric types, but that the string does not have the appropriate format.*/
             JOptionPane.showMessageDialog(null, "Please enter a valid OTP.");
         } catch (Exception e) {
             e.printStackTrace();

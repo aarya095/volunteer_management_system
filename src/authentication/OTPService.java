@@ -23,14 +23,14 @@ public class OTPService {
 
     // Generate and return OTP
     public int generateOTP() {
-        Random random = new Random();
+        Random random = new Random(); //for random number generation
         otp = 100000 + random.nextInt(900000); // Ensure OTP is 6 digits
         return otp;
     }
 
     // Send OTP to the recipient's email
     public void sendOTP(String recipientEmail) {
-        String[] emailCredentials = getEmailCredentials();
+        String[] emailCredentials = getEmailCredentials(); 
 
         if (emailCredentials == null || emailCredentials.length < 2) {
             System.out.println("Error retrieving email credentials from the database.");
@@ -41,11 +41,11 @@ public class OTPService {
         String password = emailCredentials[1];
 
         // Set up mail server properties
-        Properties properties = new Properties();
+        Properties properties = new Properties(); //SMTP: Simple Mail Transfer Protocol | TLS:Transport Layer Security
         properties.put("mail.smtp.auth", "true");
         properties.put("mail.smtp.starttls.enable", "true");
         properties.put("mail.smtp.host", "smtp.gmail.com");
-        properties.put("mail.smtp.port", "587");
+        properties.put("mail.smtp.port", "587"); //gmail part 
 
         // Create session with authenticator
         Session session = Session.getInstance(properties, new Authenticator() {
@@ -73,13 +73,13 @@ public class OTPService {
 
     // Verify OTP entered by the user
     public boolean verifyOTP(int enteredOTP) {
-        return otp == enteredOTP; // Compare the generated OTP with the entered OTP
+        return otp == enteredOTP; 
     }
 
     // Retrieve email credentials from the database
     private String[] getEmailCredentials() {
         String[] credentials = new String[2]; // Array to hold email and password
-        conn connection = new conn(); // Create an instance of your conn class
+        conn connection = new conn(); 
         Statement statement = null;
 
         try {
@@ -87,17 +87,17 @@ public class OTPService {
             statement = connection.s;
 
             // Execute a query to retrieve the email and password
-            String query = "SELECT email, emailpassword FROM login WHERE Id=1"; // Adjust the query as needed
+            String query = "SELECT email, emailpassword FROM login WHERE Id=1"; // Retrieves email and password from MySQL
             ResultSet rs = statement.executeQuery(query);
 
-            // Assuming there's only one row, retrieve email and password
+           
             if (rs.next()) {
                 credentials[0] = rs.getString("email");    // Get email
                 credentials[1] = rs.getString("emailpassword"); // Get password
             }
         } catch (Exception e) {
             e.printStackTrace();
-            return null; // Return null in case of an error
+            return null; 
         } finally {
             // No need to close connection as conn instance is reused
             try {

@@ -125,13 +125,13 @@ public class AssignVolunteer extends JFrame implements ActionListener {
 	
 	 private void assignVolunteerToEvent(String volunteerId, String eventId) {
 	        
-		 String checkQuery = "select count(*) from volunteer_event where volunteerId = ? and eventId = ? ";
-		 String assignQuery = "INSERT INTO volunteer_event (volunteerId, eventId) VALUES (?, ?)";
+		 String checkQuery = "select count(*) from volunteer_event where volunteerId = ? and eventId = ? "; //Checks if the volunteer is already assigned to the event
+		 String assignQuery = "INSERT INTO volunteer_event (volunteerId, eventId) VALUES (?, ?)"; //Inserts a new entry if the volunteer is not already assigned
    	     
 		 try {
 	            conn c = new conn();
 	            
-	            PreparedStatement checkStmt = c.c.prepareStatement(checkQuery);
+	            PreparedStatement checkStmt = c.c.prepareStatement(checkQuery); //does not execute the SQL but instead prepares the statement for execution
 	            checkStmt.setString(1, volunteerId);
 	            checkStmt.setString(2, eventId);
 	            ResultSet rs = checkStmt.executeQuery();
@@ -141,7 +141,7 @@ public class AssignVolunteer extends JFrame implements ActionListener {
 	                return;
 	            }
 	             
-	            PreparedStatement pstmt = c.c.prepareStatement(assignQuery);
+	            PreparedStatement pstmt = c.c.prepareStatement(assignQuery); //does not execute the SQL but instead prepares the statement for execution
 	            pstmt.setString(1, volunteerId);
 	            pstmt.setString(2, eventId);
 	            int rowsAffected = pstmt.executeUpdate();
@@ -181,7 +181,7 @@ public class AssignVolunteer extends JFrame implements ActionListener {
 		        } else {
 		            JOptionPane.showMessageDialog(this, "Error: No such assignment exists for this volunteer and event.");
 		        }
-		    } catch (SQLException e) {
+		    } catch (SQLException e) { //An exception that provides information on a database access error or other errors. 
 		        e.printStackTrace();
 		        JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
 		    }

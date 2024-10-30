@@ -46,11 +46,11 @@ public class ForgotPassword extends JFrame implements ActionListener {
                 String email = tfemail.getText();
 
                 conn c = new conn();  // Get the connection object
-                Connection connection = c.c;  // Use the connection directly
+                Connection connection = c.c;  
 
                 String query = "SELECT * FROM login WHERE email = ?";
                 PreparedStatement pstmt = connection.prepareStatement(query);
-                pstmt.setString(1, email);
+                pstmt.setString(1, email); // Replace "?" with "email"
 
                 ResultSet rs = pstmt.executeQuery();
 
