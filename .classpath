@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry exported="true" kind="lib" path="D:/Aarya/Coding_Projects/JAVA/Execautable Jar Files/mysql-connector-java-8.0.28.jar">
+	<classpathentry kind="lib" path="D:/Aarya/Coding_Projects/JAVA_eclipse/Execautable Jar Files/mysql-connector-java-8.0.28.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
@@ -11,22 +11,22 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/Aarya/Coding_Projects/JAVA/Execautable Jar Files/new2-rs2xml.jar">
+	<classpathentry kind="lib" path="D:/Aarya/Coding_Projects/JAVA_eclipse/Execautable Jar Files/new2-rs2xml.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/Aarya/Coding_Projects/JAVA/Execautable Jar Files/Mjakarta-mail.jar">
+	<classpathentry kind="lib" path="D:/Aarya/Coding_Projects/JAVA_eclipse/Execautable Jar Files/Mjakarta-activation.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/Aarya/Coding_Projects/JAVA/Execautable Jar Files/Mjakarta-activation.jar">
+	<classpathentry kind="lib" path="D:/Aarya/Coding_Projects/JAVA_eclipse/Execautable Jar Files/jcalender.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/Aarya/Coding_Projects/JAVA/Execautable Jar Files/jcalender.jar">
+	<classpathentry kind="lib" path="D:/Aarya/Coding_Projects/JAVA_eclipse/Execautable Jar Files/Mjakarta-mail.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
